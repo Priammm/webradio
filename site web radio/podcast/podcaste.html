@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Radio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="image/logo.png">
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="image/logo.png" alt="logo" class="logo"></a>
+        <h1>Club Web Radio</h1>
+        <img src="image/menu.png" alt="Menu" class="menu-icon" onclick="toggleSidebar()">
+    </header>
+
+<div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+                <!-- Image cliquable pour la connexion -->
+            <img src="image/login.png" alt="Se connecter" class="connect-img" onclick="openLoginModal()">
+            <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+        </div>
+        <a href="javascript:void(0)" onclick="redirectWithSidebarClose('index.html')">
+            <button class="nav-btn">Accueil</button>
+        </a>
+        <a href="javascript:void(0)" onclick="redirectWithSidebarClose('podcast/podcaste.html')">
+            <button class="nav-btn">Podcast</button>
+        </a>
+        <a href="javascript:void(0)" onclick="redirectWithSidebarClose('connexion/connexion.html')">
+            <button class="nav-btn">Admin Test</button>
+        </a>
+    </div>
+    
+    <!-- Overlay pour le flou -->
+<div id="overlay" class="overlay"></div>
+
+    <!-- Modal de connexion --> 
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeLoginModal()">&times;</span>
+        <h2>Se connecter</h2>
+        <form action="submit_login.php" method="POST">
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Se connecter</button>
+        </form>
+    </div>
+</div> 
+
+    <main>
+        <section>
+            <h1>Nos Podcast</h1>
+            <div class="search-wrapper">
+                <!-- Barre de recherche -->
+                <div class="search-container" id="searchBar">
+                    <input type="text" placeholder="Rechercher un mot clé..." id="searchInput">
+                </div>
+                <!-- Image cliquable -->
+                <img src="image/loupe.png" alt="Icône de recherche" class="search-icon" onclick="toggleSearchBar()">
+                <button onclick="searchText()">Rechercher</button>
+            </div>
+            <div class="video-container">
+                <div class="video-card">
+                    <a href="video.html">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 1</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 2</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 3</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 4</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 5</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 6</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 7</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 8</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 9</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 10</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 11</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 12</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 13</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 14</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 15</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 16</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 17</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 18</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 19</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 20</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+                <div class="video-card">
+                    <a href="video.html?id=3">
+                        <img src="image/miniature.png" alt="Miniature vidéo 3" class="video-thumbnail">
+                    </a>
+                    <h6 class="video-title">Vidéo test 21</h6>
+                    <p>description descriptible de la déscription</p>
+
+                </div>
+            </div>            
+            </div>            
+        </section>
+        <p>ordinateur, écran, clavier, souris, internet, serveur, réseau, site, page, navigateur, HTML, CSS, JavaScript, Python, programmation, code, logiciel, application, système, base de données, utilisateur, interface, connexion, sécurité, cybersécurité, protection, pare-feu, antivirus, hacking, cryptographie, algorithme, intelligence artificielle, machine learning, deep learning, cloud, hébergement, domaine, SEO, référencement, marketing, publicité, analytics, trafic, conversion, responsive, design, ergonomie, UX, UI, framework, bibliothèque, API, requête, JSON, XML, SQL, NoSQL, backend, frontend, fullstack, développement, projet, entreprise, startup, innovation, technologie, digitalisation, transformation, automatisation, robotique, électronique, capteur, IoT, big data, blockchain, smart contract, fintech, edtech, legaltech, medtech, science, recherche, données, analyse, statistique, modélisation, simulation, calcul, graphique, rendu, animation, jeu vidéo, moteur de jeu, physique, audio, vidéo, streaming, compression, codec, format, résolution, pixel, affichage, taux de rafraîchissement, GPU, CPU, RAM, stockage, SSD, disque dur, USB, HDMI, Bluetooth, Wi-Fi, Ethernet, connexion, latence, bande passante, protocole, HTTP, HTTPS, FTP, SSH, TCP/IP, DNS, adresse IP, IPv4, IPv6, VPN, proxy, cloud computing, SaaS, PaaS, IaaS, virtualisation, machine virtuelle, container, Docker, Kubernetes, DevOps, CI/CD, intégration continue, déploiement, monitoring, logs, debugging, optimisation, performance, scalability, haute disponibilité, redondance, tolérance aux pannes, backup, récupération, incident, audit, conformité, RGPD, données personnelles, confidentialité, anonymisation, chiffrement, signature électronique, authentification, MFA, SSO, biométrie, reconnaissance faciale, empreinte digitale, token, clé de sécurité, phishing, malware, ransomware, social engineering, bug, faille, vulnérabilité, pentest, test d’intrusion, forensic, investigation numérique, analyse réseau, IDS, IPS, honeypot, firewall, bastion, sandbox, reverse engineering, exploit, zero-day, rootkit, spyware, trojan, keylogger, brute force, dictionnaire, hash, salage, bcrypt, SHA-256, MD5, injection SQL, XSS, CSRF, SSRF, LFI, RFI, clickjacking, buffer overflow, heap, stack, ASLR, DEP, ROP, fuzzing, shellcode, payload, escalation de privilèges, pivoting, MITM, sniffing, ARP spoofing, DNS poisoning, Wireshark, Metasploit, nmap, Burp Suite, OWASP, Kali Linux, Black Hat, White Hat, Grey Hat, CTF, bug bounty, hacktivisme, cybercriminalité, dark web, deep web, Tor, anonymat, vie privée, surveillance, cyberattaque, cyberdéfense, SOC, SIEM, threat intelligence, APT, botnet, DDoS, ransomware, trojan, RAT, spyware, keylogger, phishing, spear phishing, whaling, smishing, vishing, OSINT, reconnaissance, fingerprinting, enumeration, scanning, exploitation, post-exploitation, exfiltration, persistence, rootkit, backdoor, trojan horse, malware analysis, sandboxing, static analysis, dynamic analysis, behavioral analysis, reverse engineering, disassembly, decompilation, IDA Pro, Ghidra, Radare2, debugger, GDB, WinDbg, OllyDbg, binary exploitation, stack overflow, heap overflow, format string, RCE, LPE, privilege escalation, kernel exploitation, race condition, TOCTOU, fuzzing, AFL, LibFuzzer, Honggfuzz, symbolic execution, Angr, concolic testing, SMT solver, Z3, satisfiability modulo theories, taint analysis, dynamic taint tracking, DSE, symbolic execution engine, Triton, PIN, DynamoRIO, Frida, patching, binary rewriting, JIT, obfuscation, deobfuscation, anti-debugging, anti-analysis, anti-reversing, packer, cryptor, polymorphism, metamorphism, AV evasion, YARA, signature detection, heuristic analysis, behavior-based detection, anomaly detection, machine learning in security, adversarial ML, GANs, generative adversarial networks, adversarial examples, data poisoning, model inversion, membership inference, side-channel attacks, cache attacks, timing attacks, power analysis, EM side-channels, fault injection, glitching, voltage fault injection, electromagnetic fault injection, laser fault injection, fault tolerance, secure enclaves, trusted execution environments, SGX, TPM, HSM, secure boot, measured boot, remote attestation, digital forensics, incident response, threat hunting, security operations, cyber threat intelligence, TTPs, MITRE ATT&CK, kill chain, purple teaming, blue team, red team, ethical hacking, penetration testing, security awareness, phishing simulation, security training, CISO, cybersecurity governance, risk management, compliance, security policies, security frameworks, NIST, ISO 27001, CIS Controls, PCI-DSS, HIPAA, GDPR, CCPA, cybersecurity law, cyber insurance, data breach notification, legal aspects of cybersecurity, intellectual property, cybercrime laws, digital rights, ethical considerations in cybersecurity, cyber ethics, privacy by design, security by design, DevSecOps, secure coding, threat modeling, STRIDE, DREAD, PASTA, LINDDUN, risk assessment, security architecture, zero trust, least privilege, access control, identity management, IAM, RBAC, ABAC, attribute-based access control, policy enforcement, federation, SAML, OAuth, OpenID Connect, password security, password managers, passkeys, WebAuthn, biometrics in authentication, MFA best practices, authentication protocols, Kerberos, NTLM, LDAP, directory services, Active Directory, cloud security, CASB, CSPM, CWPP, CNAPP, serverless security, microservices security, API security, GraphQL security, supply chain security, software bill of materials, SBOM, dependency management, secure CI/CD pipelines, software composition analysis, SCA, vulnerability management, patch management, zero-day vulnerabilities, bug bounty programs, responsible disclosure, full disclosure, coordinated disclosure, exploit development, shellcoding, post-exploitation techniques, persistence mechanisms, lateral movement, credential dumping, token impersonation, golden ticket, silver ticket, pass-the-hash, pass-the-ticket, Kerberoasting, NTLM relay, responder, Inveigh, Mimikatz, offensive security tools, Cobalt Strike, Empire, Sliver, Havoc, command and control, C2, beaconing, domain fronting, DNS tunneling, exfiltration techniques, covert channels, steganography, hiding data in images, hiding data in audio, covert storage channels, covert timing channels, security research, vulnerability research, exploit mitigation, control flow integrity, CFI, return-oriented programming, ROP chains, heap spraying, ASLR bypass, DEP bypass, SEH exploitation, SEHOP, exception handling, security bypass techniques, sandbox escapes, hypervisor security, VM escape, cloud vulnerabilities, Kubernetes security, container security, supply chain attacks, dependency confusion, typosquatting, malicious npm packages, backdoored dependencies, code injection, process injection, DLL injection, thread hijacking, APC injection, ETW bypass, event tracing for Windows, userland hooks, kernel hooks, rootkit techniques, firmware security, BIOS security, UEFI security, secure boot bypass, hardware hacking, embedded security, IoT security, smart home security, industrial control systems security, SCADA security, OT security, ICS security, automotive cybersecurity, avionics security, satellite security, space cybersecurity, quantum computing security, post-quantum cryptography, homomorphic encryption, secure multi-party computation, differential privacy, federated learning, adversarial robustness, explainable AI security, ethical considerations in AI security.
+</p>
+        <div class="rightContainer">
+            <button onclick="scrollToTop()">⬆</button>
+        </div>
+    </main>
+
+    <footer>
+        <p class="social-text">Suivez-nous aussi sur :</p>
+        <div class="social-buttons">
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="image/instagram.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="image/facebook.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com" target="_blank">
+                <img src="image/youtube.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="https://www.tiktok.com" target="_blank">
+                <img src="image/tiktok.png" alt="TikTok" class="social-icon">
+            </a>
+        </div>
+        
+        <div class="footer-content">
+            <a href="https://lycee-lavoisier-meru.fr/" target="_blank">
+                <img src="image/lavoisier.png" alt="Logo" class="footer-logo">
+            </a>
+            <p class="footer-text">© 2025 Club Web Radio du Lycée Antoine Lavoisier - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
